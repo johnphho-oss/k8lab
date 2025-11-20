@@ -14,9 +14,9 @@ spec:
         app: echo-demo
     spec:
       containers:
-      - name: http-echo
-        image: hashicorp/http-echo:0.2.3
-        args:
-          - "-text=hello from echo-demo"
-        ports:
-        - containerPort: 5678
+        - name: http-echo
+          image: nginxdemos/hello:plain-text
+          args:
+            - "-text=hello from echo-demo"
+          ports:
+            - containerPort: 80
