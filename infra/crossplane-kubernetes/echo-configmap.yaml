@@ -12,6 +12,6 @@ spec:
         name: echo-config
         namespace: demo2
       data:
-        MESSAGE: "hello from crossplane"
+        MESSAGE: "I broke hello from crossplane"
   providerConfigRef:
     name: kubernetes-provider
