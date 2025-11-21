@@ -1,0 +1,29 @@
+replicaCount: 1
+
+image:
+  repository: nginxdemos/hello
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: ""
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+  hosts:
+    - host: echo.localdev.me
+      paths:
+        - path: /
+          pathType: Prefix
+
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+podAnnotations: {}
+podLabels: {}
